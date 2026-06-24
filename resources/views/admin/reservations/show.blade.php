@@ -101,87 +101,53 @@
     </div>
 
     {{-- Rooms --}}
-    <div class="card-body">
-    @php $roomTotal = 0; @endphp
-
-    <div class="row">
-        @foreach($reservation->reservationRooms as $i => $rr)
-
-            @php
-                $sub = $rr->price_at_booking * $reservation->total_days;
-                $roomTotal += $sub;
-            @endphp
-
-            <div class="col-md-4 mb-3">
-                <div class="card h-100 shadow-sm" style="background:#f8f9fc;">
-
-                    <div class="card-body">
-
-                        <div class="mb-2">
-                            <div class="font-weight-bold" style="font-size:1.1rem;">
-                                Kamar {{ $rr->room->room_number }}
-                            </div>
-
-                            <span class="badge badge-primary">
-                                {{ $rr->roomType->name }}
-                            </span>
-
+    <div class="card">
+        <div class="card-header"><h4>Daftar Kamar</h4></div>
+        <div class="card-body">
+            @php $roomTotal = 0; @endphp
+            @foreach($reservation->reservationRooms as $i => $rr)
+                @php $sub = $rr->price_at_booking * $reservation->total_days; $roomTotal += $sub; @endphp
+                <div class="d-flex justify-content-between align-items-start border rounded p-3 mb-3" style="background:#f8f9fc;">
+                    <div class="flex-grow-1">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="font-weight-bold mr-2" style="font-size:1.1rem;">Kamar {{ $rr->room->room_number }}</span>
+                            <span class="badge badge-primary">{{ $rr->roomType->name }}</span>
                             @if($rr->roomType->has_breakfast)
-                                <span class="badge badge-success">
-                                    Sarapan
-                                </span>
-                            @endif
-
-                            {{-- CONNECTING (kalau ada field) --}}
-                            @if(isset($rr->room->is_connecting) && $rr->room->is_connecting)
-                                <span class="badge badge-warning">
-                                    Connecting
-                                </span>
+                                <span class="badge badge-success ml-1">Sarapan Termasuk</span>
                             @endif
                         </div>
-
-                        <small class="text-muted d-block">
-                            Kapasitas: <strong>{{ $rr->roomType->capacity }} orang</strong>
-                        </small>
-
-                        <small class="text-muted d-block">
-                            Durasi: <strong>{{ $reservation->total_days }} malam</strong>
-                        </small>
-
-                        <small class="text-muted d-block">
-                            Harga/malam:
-                            <strong>
-                                Rp {{ number_format($rr->price_at_booking, 0, ',', '.') }}
-                            </strong>
-                        </small>
-
-                        @if($rr->roomType->description)
-                            <small class="text-muted d-block mt-2">
-                                {{ $rr->roomType->description }}
+                        <div class="d-flex flex-wrap mb-2" style="gap:16px;">
+                            <small class="text-muted">
+                                <i data-feather="users" style="width:13px;height:13px;"></i>
+                                Kapasitas: <strong>{{ $rr->roomType->capacity }} orang</strong>
                             </small>
+                            <small class="text-muted">
+                                <i data-feather="moon" style="width:13px;height:13px;"></i>
+                                Durasi: <strong>{{ $reservation->total_days }} malam</strong>
+                            </small>
+                            <small class="text-muted">
+                                <i data-feather="tag" style="width:13px;height:13px;"></i>
+                                Harga/malam: <strong>Rp {{ number_format($rr->price_at_booking, 0, ',', '.') }}</strong>
+                            </small>
+                        </div>
+                        @if($rr->roomType->description)
+                        <small class="text-muted">
+                            <i data-feather="info" style="width:13px;height:13px;"></i>
+                            {{ $rr->roomType->description }}
+                        </small>
                         @endif
-
                     </div>
-
-                    <div class="card-footer bg-white text-right">
-                        <small class="text-muted">Subtotal</small><br>
-                        <strong>
-                            Rp {{ number_format($sub, 0, ',', '.') }}
-                        </strong>
+                    <div class="text-right ml-4" style="white-space:nowrap;">
+                        <div class="text-muted" style="font-size:11px;">Subtotal</div>
+                        <strong style="font-size:1.05rem;">Rp {{ number_format($sub, 0, ',', '.') }}</strong>
                     </div>
-
                 </div>
+            @endforeach
+            <div class="text-right">
+                <strong>Total Kamar: Rp {{ number_format($roomTotal, 0, ',', '.') }}</strong>
             </div>
-
-        @endforeach
+        </div>
     </div>
-
-    <div class="text-right mt-3">
-        <strong>
-            Total Kamar: Rp {{ number_format($roomTotal, 0, ',', '.') }}
-        </strong>
-    </div>
-</div>
 
     {{-- Extra Charges (FnB, Laundry, Damage) --}}
     @if($reservation->extraCharges->isNotEmpty())

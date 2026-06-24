@@ -1,0 +1,435 @@
+/* =====================================================
+PPKD HOTEL MANAGEMENT SYSTEM
+CUSTOM THEME
+===================================================== */
+
+/* =====================================================
+GLOBAL
+===================================================== */
+
+body {
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+#main {
+    background: #f4f6f9;
+}
+
+p {
+    color: #1f2937;
+}
+
+.text-muted {
+    color: #6b7280 !important;
+}
+
+/* =====================================================
+SIDEBAR
+===================================================== */
+
+#sidebar,
+.sidebar-wrapper {
+    color: #fff;
+}
+
+/* Logo */
+
+.sidebar-header h2 {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Targetin link di sidebar */
+.sidebar-menu .sidebar-link span,
+.sidebar-menu .sidebar-link i {
+    color: #ffffff !important;
+}
+
+/* Kalo pas di-hover (disorot mouse) mau beda warna, tambahin ini juga */
+.sidebar-menu .sidebar-link:hover span,
+.sidebar-menu .sidebar-link:hover i {
+    color: #f3f4f6 !important;
+    /* Putih agak abu dikit */
+}
+
+.sidebar-header {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.sidebar-header h2 span {
+    color: #d4af37 !important;
+}
+
+/* Section Title */
+
+.sidebar-title {
+    color: #94a3b8 !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+/* Menu */
+
+.sidebar-item {
+    margin-bottom: 4px;
+}
+
+.sidebar-link {
+    color: #ffffff !important;
+    border-radius: 8px;
+    margin: 2px 8px;
+    transition: .2s;
+}
+
+.sidebar-link span {
+    color: #e5e7eb !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar-link svg {
+    color: #94a3b8 !important;
+}
+
+.sidebar-link:hover {
+    background: #1e293b !important;
+}
+
+.sidebar-link:hover span,
+.sidebar-link:hover svg {
+    color: #ffffff !important;
+}
+
+/* Active Menu */
+
+.sidebar-item.active>.sidebar-link {
+    background: transparent !important;
+}
+
+.sidebar-item.active .sidebar-link span,
+.sidebar-item.active .sidebar-link svg {
+    color: #ffffff !important;
+}
+
+/* Submenu */
+
+.submenu a {
+    color: #cbd5e1 !important;
+}
+
+.submenu a:hover {
+    color: #d4af37 !important;
+}
+
+/* =====================================================
+NAVBAR
+===================================================== */
+
+.navbar.navbar-header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+}
+
+/* =====================================================
+CARDS
+===================================================== */
+
+.card {
+    border: none !important;
+    border-radius: 18px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08) !important;
+}
+
+.card-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-weight: 600;
+}
+
+.card-body,
+.card-title,
+.card-header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000000 !important;
+}
+
+/* =====================================================
+STAT CARDS
+===================================================== */
+
+.stat-card {
+    border-radius: 18px !important;
+    transition: .2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+/* =====================================================
+BUTTONS
+===================================================== */
+
+.btn-primary {
+    background: #c9a227 !important;
+    border-color: #c9a227 !important;
+}
+
+.btn-primary:hover {
+    background: #b38d1d !important;
+    border-color: #b38d1d !important;
+}
+
+/* =====================================================
+TABLES
+===================================================== */
+
+.table {
+    background: #ffffff;
+    color: #111827;
+}
+
+.table thead th {
+    background: #f8fafc !important;
+}
+
+/* =====================================================
+FLOOR BOARD
+===================================================== */
+
+.floor-board {
+    margin-top: 20px;
+}
+
+.floor-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.room-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    min-width: 120px;
+    height: 95px;
+
+    padding: 12px;
+    margin: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+    transition: .2s;
+}
+
+.room-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+
+.room-number {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.room-type {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.room-status-text {
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+/* Status Colors */
+
+.room-vacant {
+    border-left: 5px solid #22c55e;
+}
+
+.room-occupied {
+    border-left: 5px solid #2563eb;
+}
+
+.room-dirty {
+    border-left: 5px solid #f59e0b;
+}
+
+.room-maintenance {
+    border-left: 5px solid #ef4444;
+}
+
+/* =====================================================
+UTILITIES
+===================================================== */
+
+.badge {
+    border-radius: 999px;
+}
+
+.role-badge {
+    background: #d4af37 !important;
+    color: #ffffff !important;
+}
+
+.submenu {
+    padding-left: 12px;
+}
+
+.submenu li a {
+    display: block;
+    padding: 8px 15px;
+    color: #cbd5e1 !important;
+    font-size: 13px;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.submenu li a:hover {
+    background: #1e293b;
+    color: #fff !important;
+}
+
+.submenu li.active a {
+    color: #d4af37 !important;
+    font-weight: 600;
+}
+
+/* =========================
+   FIX SIDEBAR
+========================= */
+
+/* Semua text sidebar putih */
+.sidebar-link,
+.sidebar-link span,
+.sidebar-link i,
+.sidebar-link svg {
+    color: #ffffff !important;
+}
+
+/* Hover */
+.sidebar-link:hover {
+    background: #1e293b !important;
+}
+
+.sidebar-link:hover span,
+.sidebar-link:hover i,
+.sidebar-link:hover svg {
+    color: #ffffff !important;
+}
+
+/* Hilangkan shadow biru */
+.sidebar-item.active,
+.sidebar-item.active .sidebar-link {
+    box-shadow: none !important;
+}
+
+/* Active menu */
+.sidebar-item.active>.sidebar-link {
+    background: #c9a227 !important;
+    color: #ffffff !important;
+}
+
+/* Dashboard tidak permanen gold */
+.sidebar-item .sidebar-link {
+    background: transparent !important;
+}
+
+/* Hanya route aktif yang gold */
+.sidebar-item.active>.sidebar-link {
+    background: #c9a227 !important;
+}
+
+/* Hilangkan garis biru kiri bawaan template */
+.sidebar-item.active::before,
+.sidebar-item.active::after {
+    display: none !important;
+}
+
+/* Hilangkan focus outline */
+.sidebar-link:focus,
+.sidebar-link:active,
+.btn:focus,
+.btn:active,
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ===== DARK HOTEL SIDEBAR ===== */
+
+#sidebar,
+.sidebar-wrapper {
+    background: #111827 !important;
+}
+
+.sidebar-header {
+    background: #111827 !important;
+}
+
+.sidebar-menu {
+    background: #111827 !important;
+}
+
+<style>
+
+/* Sembunyiin kotak checkbox aslinya */
+.room-card-input {
+    display: none;
+}
+
+/* Bikin label kayak card yang bisa diklik */
+.room-card-label {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #e9ecef;
+    /* Border abu-abu halus */
+    border-radius: 8px;
+}
+
+/* Efek pas disorot mouse */
+.room-card-label:hover {
+    border-color: #babbbc;
+    transform: translateY(-2px);
+}
+
+/* NAH INI DIA! Efek pas card-nya diklik (checkbox kecentang) */
+.room-card-input:checked+.room-card-label {
+    border-color: #caa53d;
+    /* Warna emas PPKD lu */
+    background-color: #fdfaf0;
+    /* Kuning pudar tipis banget */
+    box-shadow: 0 4px 10px rgba(202, 165, 61, 0.2);
+}
+
+/* Ubah warna teks status pas lagi kepilih */
+.room-card-input:checked+.room-card-label .room-status {
+    color: #caa53d !important;
+    font-weight: bold;
+}
+
+</style>

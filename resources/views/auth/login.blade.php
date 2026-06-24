@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in - Hotel Management System</title>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo ppkd.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+
+    <style>
+        body, #auth {
+            /* Kalo mau ganti warna solid: */
+            /* background: #1a202c !important; */
+
+            /* Kalo mau pake gambar dari folder public lu: */
+            background-image: url('{{ asset("assets/images/background/bglogin.jpg") }}') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+    </style>
+
 </head>
 <body>
     <div id="auth">
@@ -16,11 +30,11 @@
                     <div class="card pt-4">
                         <div class="card-body">
                             <div class="text-center mb-5">
-                                <img src="{{ asset('assets/images/favicon.svg') }}" height="48" class='mb-4'>
+                                <img src="{{ asset('assets/images/logo ppkd.png') }}" height="48" class='mb-4'>
                                 <h3>Sign In</h3>
                                 <p>Sistem Manajemen Hotel PPKD</p>
                             </div>
-                            
+
                             <!-- Session Status -->
                             @if (session('status'))
                                 <div class="alert alert-success">
@@ -30,7 +44,7 @@
 
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
-                                
+
                                 <div class="form-group position-relative has-icon-left">
                                     <label for="email">Email</label>
                                     <div class="position-relative">
@@ -43,7 +57,7 @@
                                         <span class="text-danger"><small>{{ $message }}</small></span>
                                     @enderror
                                 </div>
-                                
+
                                 <div class="form-group position-relative has-icon-left">
                                     <div class="clearfix">
                                         <label for="password">Password</label>
@@ -65,7 +79,7 @@
                                         <label for="remember_me">Remember me</label>
                                     </div>
                                 </div>
-                                
+
                                 <div class="clearfix">
                                     <button type="submit" class="btn btn-primary btn-block">Log in</button>
                                 </div>
@@ -76,7 +90,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="{{ asset('assets/js/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>

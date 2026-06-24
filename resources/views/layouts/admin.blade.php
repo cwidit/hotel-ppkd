@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo ppkd.png') }}" type="image/x-icon">
     <style>
         /* ── Navbar ── */
         .navbar.navbar-header { background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,0.07); border-bottom: 1px solid #f0f0f0; }
@@ -19,7 +20,7 @@
         .stat-card:hover { transform: translateY(-2px); }
         .stat-card .stat-icon { width: 52px; height: 52px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
         .stat-card .stat-value { font-size: 1.7rem; font-weight: 700; line-height: 1.2; }
-        .stat-card .stat-label { font-size: 12px; color: #8a9bb0; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-card .stat-label { font-size: 12px;color: #374151;text-transform: uppercase;letter-spacing: .5px; }
         .stat-card .trend { font-size: 11px; }
         .trend-up { color: #28a745; }
         .trend-down { color: #dc3545; }
